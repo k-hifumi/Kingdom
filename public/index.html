@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>キングダム</title>
+
+  <script src="https://kit.fontawesome.com/9d019bebc3.js" crossorigin="anonymous" defer></script>
+  <link rel="stylesheet" href="static/css/style.css" />
+  <script src="static/js/script.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="main-visual">
+      <!-- 動画オーバーレイ（イントロ） -->
+      <div class="video-overlay" id="first-view">
+        <video id="intro-video" autoplay muted playsinline>
+          <source src="static/movie/intro.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- ヘッダー -->
+      <header>
+        <div class="left-content">
+          <a href="index.html">
+            <img src="static/img/logo-teaser.png" alt="キングダムロゴ" />
+          </a>
+        </div>
+
+        <div class="right-content">
+          <nav>
+            <ul class="nav">
+              <li><a href="index.html" class="menu-item">トップ</a></li>
+              <li><a href="story.html" class="menu-item">ストーリー</a></li>
+              <li>
+                <a href="character.html" class="menu-item">キャラクター</a>
+              </li>
+              <li><a href="news.html" class="menu-item">ニュース</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <h1 class="page-title">メニュー</h1>
+      <section class="index-menu">
+
+        <div class="index-item">
+          <h2 class="title">ストーリー</h2>
+          <p class="body">戦場で繰り広げられる激闘の中、仲間との絆や託された想いが描かれる物語。<br>
+            強大な敵と知略が交錯し、歴史を動かす決定的な瞬間が訪れる。<br>
+            深い悲しみと新たな決意が重なり、次の時代へと歩みがつながっていく――。</p>
+          <a href="story.html">詳しく見る</a>
+        </div>
+
+        <div class="index-item">
+          <h2 class="title">キャラクター</h2>
+          <p class="body">信、王騎、龐煖など、物語を彩る個性豊かなキャラクターたち。<br>
+            彼らの背景や成長、戦いの中での葛藤が、物語に深みを与える。<br>
+            それぞれの想いが交錯し、運命を切り開いていく。</p>
+          <a href="character.html">詳しく見る</a>
+        </div>
+
+        <div class="index-item">
+          <h2 class="title">ニュース</h2>
+          <p class="body">最新の映画情報やイベント、キャストのインタビューなど、<br>
+            キングダムに関する最新ニュースをお届け。<br>
+            映画の公開日や特別イベントの情報を見逃さないで！</p>
+          <a href="news.html">詳しく見る</a>
+        </div>
+
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer">&copy; Kingdom All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+
+</html>
