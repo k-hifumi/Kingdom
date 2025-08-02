@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     } else {
         overlay.style.display = 'block'; // ← 今日見てないときだけ表示
+        localStorage.setItem('introPlayedDate', today);
     }
 
     // 画面クリックで音声ON/OFFを切り替える
@@ -53,7 +54,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function endIntro() {
-        localStorage.setItem('introPlayedDate', today); // 今日の視聴を記録
         overlay.classList.add('hidden'); // フェードアウト用CSSクラス追加
 
         // 1秒後に完全に非表示に（DOMには残す）
@@ -62,3 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 1000);
     }
 });
+
+/*
+TODO: スキップを実装する
+TODO: 音量をON/OFFどちらで再生するかを最初に選択できるようにする
+*/

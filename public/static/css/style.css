@@ -13,7 +13,7 @@ body {
 /* === 導入動画オーバーレイ === */
 
 #first-view {
-    display: none;
+  display: none;
 }
 
 .video-overlay {
@@ -197,7 +197,8 @@ main {
 
 .index-item a:hover {
   background-color: #e3b04b;
-  color: #1a1a1a; /* 元の背景色に近い黒を利用 */
+  color: #1a1a1a;
+  /* 元の背景色に近い黒を利用 */
 }
 
 /* === story.html === */
@@ -422,6 +423,9 @@ main {
 }
 
 .label {
+  display: inline-block;
+  width: 90px;
+  text-align: center;
   border: 2px solid #e3b04b;
   color: #e3b04b;
   padding: 4px 8px;
@@ -430,7 +434,11 @@ main {
   letter-spacing: 0.1em;
   flex-shrink: 0;
   margin-right: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
 
 time {
   font-weight: bold;
