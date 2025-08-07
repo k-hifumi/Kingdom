@@ -2,79 +2,169 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>キングダム</title>
 
+  <link rel="stylesheet" href="./static/css/style.css">
   <script src="https://kit.fontawesome.com/9d019bebc3.js" crossorigin="anonymous" defer></script>
-  <link rel="stylesheet" href="static/css/style.css" />
-  <script src="static/js/script.js" defer></script>
 </head>
 
 <body>
   <div class="wrapper">
     <div class="main-visual">
-      <!-- 動画オーバーレイ（イントロ） -->
-      <div class="video-overlay" id="first-view">
-        <video id="intro-video" autoplay muted playsinline>
-          <source src="static/movie/intro.mp4" type="video/mp4" />
-        </video>
-      </div>
+      <video autoplay muted playsinline loop>
+        <source src="static/movie/intro.mp4" type="video/mp4" />
+      </video>
 
-      <!-- ヘッダー -->
+
       <header>
         <div class="left-content">
-          <a href="index.html">
-            <img src="static/img/logo-teaser.png" alt="キングダムロゴ" />
-          </a>
+          <img src="static/img/logo-teaser.png" alt="キングダムロゴ">
         </div>
-
         <div class="right-content">
           <nav>
             <ul class="nav">
-              <li><a href="index.html" class="menu-item">トップ</a></li>
-              <li><a href="story.html" class="menu-item">ストーリー</a></li>
-              <li>
-                <a href="character.html" class="menu-item">キャラクター</a>
-              </li>
-              <li><a href="news.html" class="menu-item">ニュース</a></li>
+              <li><a href="index.html">トップ</a></li>
+              <li><a href="story.html">ストーリー</a></li>
+              <li><a href="character.html">キャラクター</a></li>
+              <li><a href="news.html">ニュース</a></li>
             </ul>
           </nav>
         </div>
       </header>
     </div>
-
     <main>
-      <h1 class="page-title">メニュー</h1>
-      <section class="index-menu">
-
-        <div class="index-item">
-          <h2 class="title">ストーリー</h2>
-          <p class="body">戦場で繰り広げられる激闘の中、仲間との絆や託された想いが描かれる物語。<br>
-            強大な敵と知略が交錯し、歴史を動かす決定的な瞬間が訪れる。<br>
-            深い悲しみと新たな決意が重なり、次の時代へと歩みがつながっていく――。</p>
-          <a href="story.html">詳しく見る</a>
+      <section class="news-area">
+        <h2 class="section-title">新着情報</h2>
+        <ul class="news-list">
+          <li>
+            <span class="label">告知</span>
+            <time datetime="2025-07-11">[ 2025.07.11 ]</time>
+            <a href="#">
+              <p>映画『キングダム 大将軍の帰還』が2026年夏に全国公開決定！</p>
+            </a>
+            <span class="badge">NEW</span>
+          </li>
+          <li>
+            <span class="label">試写</span>
+            <time datetime="2025-06-15">[ 2025.06.15 ]</time>
+            <a href="#">
+              <p>完成披露試写会が開催決定！主演キャストの舞台挨拶も実施予定。</p>
+            </a>
+            <span class="badge"></span>
+          </li>
+          <li>
+            <span class="label">更新</span>
+            <time datetime="2025-05-01">[ 2025.05.01 ]</time>
+            <a href="#">
+              <p>キャラクター新ビジュアル公開！信・政・羌瘣らの姿が明らかに。</p>
+            </a>
+            <span class="badge"></span>
+          </li>
+        </ul>
+        <div class="look-at-link">
+          <a class="look-at" href="news.html">もっと見る</a>
         </div>
+      </section>
 
-        <div class="index-item">
-          <h2 class="title">キャラクター</h2>
-          <p class="body">信、王騎、龐煖など、物語を彩る個性豊かなキャラクターたち。<br>
-            彼らの背景や成長、戦いの中での葛藤が、物語に深みを与える。<br>
-            それぞれの想いが交錯し、運命を切り開いていく。</p>
-          <a href="character.html">詳しく見る</a>
+      <section class="trailer">
+        <h2 class="section-title">ストーリー</h2>
+        <iframe class="trailer-movie" src="https://www.youtube.com/embed/JPBVsAcbk7s?si=uSViKe97PSAFs4YI"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <p>
+          秦の若き王・嬴政と戦災孤児の信。<br>
+          二人が歩むは中華統一の道。<br>
+          幾多の死地を越え、遂に迎えるは馬陽の決戦。<br>
+          武神・龐煖、智将・李牧ら強敵が立ちはだかり、秦と趙の命運を賭した戦が幕を開ける。
+        </p>
+
+        <a class="look-at" href="story.html">もっと見る</a>
+      </section>
+
+      <section class="character-area">
+        <h2 class="section-title">キャラクター</h2>
+        <div class="correlation">
+          <img src="static/img/correlation.jpg" alt="相関図">
         </div>
-
-        <div class="index-item">
-          <h2 class="title">ニュース</h2>
-          <p class="body">最新の映画情報やイベント、キャストのインタビューなど、<br>
-            キングダムに関する最新ニュースをお届け。<br>
-            映画の公開日や特別イベントの情報を見逃さないで！</p>
-          <a href="news.html">詳しく見る</a>
+        <div class="look-at-link">
+          <a class="look-at" href="news.html">もっと見る</a>
         </div>
+      </section>
+      <section class="cast-area">
+        <p class="cast-line">山﨑賢人</p>
+        <p class="cast-line">吉沢 亮　　橋本環奈　　清野菜名</p>
+        <p class="cast-line">山田裕貴　　岡山天音　　三浦貴大　　新木優子</p>
+        <p class="cast-line">吉川晃司</p>
+        <p class="cast-line">高嶋政宏　　要 潤　　加藤雅也　　高橋光臣　　平山祐介</p>
+        <p class="cast-line">山本耕史　　草刈正雄　　長澤まさみ</p>
+        <p class="cast-line">玉木 宏　　佐藤浩市　　小栗 旬</p>
+        <p class="cast-line">大沢たかお</p>
+      </section>
 
+      <section class="credits">
+        <p class="credit">原作：原 泰久「キングダム」（集英社「週刊ヤングジャンプ」連載）</p>
+        <p class="credit">監督：佐藤信介　脚本：黒岩 勉　原 泰久　音楽：やまだ豊</p>
+        <p class="credit">主題歌：ONE OK ROCK「Delusion:All」(Fueled By Ramen / Warner Music Japan)</p>
+
+        <p class="credit small">
+          製作総指揮：松平凡　要 潤一　長尾順康　阿部大輔　吉田和正　安本和生　佐藤義則　手塚治郎　安江 誠　金谷英剛　浜田一男　河村和範　神保 仁　エンタテインメントプロダクション協会　新村祐之
+        </p>
+
+        <p class="credit small">
+          アソシエートプロデューサー：安藤 崇、北山直樹　製作：佐藤直樹　撮影監督：豊田康臣　編集：菊池純一　美術デザイン：千田由紀子
+        </p>
+
+        <p class="credit small">
+          ラインプロデューサー：岩田靖典　撮影：大河原真　照明：小宮由紀夫（J.S.C.）　録音：小泉純一　音響効果：阿部一男　アクション監督：下村勇二
+        </p>
+
+        <p class="credit small">
+          衣装デザイン：伊藤佐智子　視覚効果スーパーバイザー：渡辺潤　編集助手：鈴木健司　VFXスーパーバイザー：大澤 宏
+        </p>
+
+        <p class="credit small">
+          ©原泰久／集英社　©2026 映画「キングダム 大将軍の帰還」製作委員会
+        </p>
+      </section>
+      <section class="sns">
+        <div class="flexbox-sns">
+          <div class="box">
+            <a href="https://x.com/kingdomthemovie">
+              <i class="fa-brands fa-x-twitter"></i>@kingdomthemovie
+            </a>
+          </div>
+          <div class="box">
+            <a href="https://www.instagram.com/kingdom_movie/">
+              <i class="fa-brands fa-instagram"></i>@kingdom_movie
+            </a>
+          </div>
+          <div class="box">
+            <a href="https://www.tiktok.com/@kingdom_movie">
+              <i class="fa-brands fa-tiktok"></i>@kingdom_movie
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
+    <div class="footer-nav">
+      <div class="center-content">
+        <img src="static/img/logo-teaser.png" alt="キングダムロゴ">
+      </div>
+      <div class="center-nav">
+        <nav>
+          <ul class="nav">
+            <li><a href="index.html">トップ</a></li>
+            <li><a href="story.html">ストーリー</a></li>
+            <li><a href="character.html">キャラクター</a></li>
+            <li><a href="news.html">ニュース</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
     <footer>
       <p class="footer">&copy; Kingdom All rights reserved.</p>
     </footer>
@@ -82,8 +172,3 @@
 </body>
 
 </html>
-
-<!--
-TODO: ページのデザインを詰める
-      → 先生に聞く
--->

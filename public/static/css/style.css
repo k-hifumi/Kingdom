@@ -87,7 +87,7 @@ header {
   padding: 0;
 }
 
-header .nav a {
+.nav a {
   color: #fcfad9;
   font-family: "Noto Serif JP", serif;
   font-size: 1.25rem;
@@ -95,7 +95,7 @@ header .nav a {
   transition: color 0.3s ease;
 }
 
-header .nav a:hover {
+.nav a:hover {
   color: #e3b04b;
 }
 
@@ -131,77 +131,153 @@ main {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+.section-title {
+  color: #e3b04b;
+  font-size: 1.8rem;
+  text-align: center;
+  font-family: "serif";
+  letter-spacing: 0.15em;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #e3b04b;
+  padding-bottom: 0.5rem;
+}
 
 /* === index.html === */
 
 .main-visual {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-image: url(../img/mainvisual04.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
 }
 
-.main-visual img {
+.main-visual video {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
 }
 
-.index-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 2rem;
-  margin: 2rem auto;
-  padding: 1rem;
-}
-
-.index-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #2a2a2a;
-  border: 2px solid #333;
-  padding: 1.5rem;
-}
-
-.index-item .title {
-  color: #e3b04b;
-  font-size: 1.5rem;
+.look-at-link {
   text-align: center;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #333;
-  padding-bottom: 0.5rem;
-  letter-spacing: 0.15em;
 }
 
-.index-item .body {
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-  margin-bottom: 1.2rem;
-  flex-grow: 1;
-}
-
-.index-item a {
-  display: block;
-  text-align: center;
+.look-at {
+  display: inline-block;
   padding: 0.6rem;
   border: 1px solid #e3b04b;
   color: #e3b04b;
   text-decoration: none;
-  font-weight: bold;
+  margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
-.index-item a:hover {
+.look-at:hover {
   background-color: #e3b04b;
   color: #1a1a1a;
-  /* 元の背景色に近い黒を利用 */
+}
+
+.news-area {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.trailer {
+  max-width: 900px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.trailer-movie {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.trailer p {
+  margin-bottom: 2rem;
+}
+
+.flexbox-sns {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.cast-area {
+  margin-top: 4rem;
+  text-align: center;
+  line-height: 2.5;
+  font-size: 1.25rem;
+}
+
+
+.credit {
+  margin: 1rem 0;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.small {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.sns {
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+.sns .flexbox-sns .box a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #e3b04b;
+  padding: 0.5rem;
+  color: #e3b04b;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.sns .flexbox-sns .box a:hover {
+  background-color: #e3b04b;
+  color: #1a1a1a;
+}
+
+.sns .flexbox-sns .box i {
+  font-size: 2.5rem;
+}
+
+.footer-nav {
+  width: 900px;
+  margin: 3rem auto;
+}
+
+.center-content {
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.center-content img {
+  height: 100%;
+}
+
+.center-nav {
+  display: flex;
+  justify-content: center;
 }
 
 /* === story.html === */
+
+.story-area {
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 
 .story-section {
   padding: 3rem 2rem;
@@ -212,10 +288,9 @@ main {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  background-image: url(../img/menu-bg.jpg);
 }
 
-.section-title {
+.story-title {
   font-size: 2rem;
   color: #e3b04b;
   border-left: 6px solid #e3b04b;
