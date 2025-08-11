@@ -42,18 +42,18 @@
         <input type="radio" name="tabs" id="tab2">
 
         <div class="tab-labels">
-          <label for="tab1">秦国</label>
-          <label for="tab2">趙国</label>
+          <label class="tab1" for="tab1">秦国</label>
+          <label class="tab2" for="tab2">趙国</label>
         </div>
 
         <div class="tab-content" id="content1">
           <div class="text-img">
             <div class="img">
-              <img src="static/img/qin/YingZheng.jpg" alt="嬴政">
+              <img id="YingZheng" src="static/img/qin/YingZheng.jpg" alt="嬴政">
             </div>
             <div class="text">
               <h2>嬴政<span class="cast">/吉沢亮</span></h2>
-              <p>秦国の若き国王。<br>
+              <p>第31代秦王<br>
                 長きに亘る戦国の世を終わらせ、世界から争いを無くすために、中華を統一することを夢見ている。</p>
             </div>
           </div>
@@ -65,9 +65,7 @@
             <div class="text">
               <h2>昌文君<span class="cast">/高嶋政宏</span></h2>
               <p>元は政の教育係で、現在は政の一番側近。<br>
-                真面目で堅物ゆえに何かと事件の多い王宮内での派手さは欠けるが、かねてより難題だった治水工事を成功させるなど、地道に成果を上げて勢力を増強、左丞相の位に就く。<br>
-                幼少期より長年慕ってきた政、下僕時代から知っている信の成長した姿には、常に心動かされている。
-              </p>
+                真面目で堅物ゆえに何かと事件の多い王宮内での派手さは欠けるが、かねてより難題だった治水工事を成功させるなど、地道に成果を上げて勢力を増強、左丞相の位に就く。</p>
             </div>
           </div>
 
@@ -106,19 +104,19 @@
             <div class="text">
               <h2>蒙武<span class="cast">/平山祐介</span>
               </h2>
-              <p>蒙驁を父に持ち、中華最強を自負する大将軍で、王騎からは秦国軍の顔になる存在と言われた。<br>
-                秦の六将を復活させたいと考えており、政に進言したことがある。</p>
+              <p>蒙驁を父に持ち、中華最強を自負する将軍で、圧倒的な膂力と攻撃力を誇り、正面突破を得意とする豪将。<br>
+                敵の策すらも力でねじ伏せるほどの武を振るい、圧倒的な力で戦場を支配する、中華最強を自負する男。</p>
             </div>
           </div>
 
           <div class="text-img">
             <div class="img">
-              <img src="static/img/qin/WangQi.jpg" alt="王騎">
+              <img id="WangQi" src="static/img/qin/WangQi.jpg" alt="王騎">
             </div>
             <div class="text">
               <h2>王騎<span class="cast">/大沢たかお</span></h2>
               <p>中華にその名を轟かせた六大将軍のひとり。<br>
-                昭王の時代に彼に心酔し、彼の中華統一の夢を追い数多の戦場で猛威を振るった。<br>
+                昭王の時代に彼に心酔し、彼の中華統一の夢を追い数多の戦場を駆け回った。<br>
                 昭王亡き後は前線から退くが、中華統一を語る政に昭王の姿を重ね復帰を決意。<br>
                 趙軍を討つため秦の総大将となる。</p>
             </div>
@@ -130,8 +128,7 @@
             </div>
             <div class="text">
               <h2>謄<span class="cast">/要潤</span></h2>
-              <p>「秦の怪鳥」と称された王騎将軍の副官であり、王騎の最も信頼する腹心。<br>
-                王騎の右腕として数々の戦場を共にし、優れた戦術眼と統率力で軍を支えてきた。<br>
+              <p>王騎の右腕として数々の戦場を共にし、優れた戦術眼と統率力で軍を支えてきた。<br>
                 その立ち居振る舞いは常に冷静で、時に冗談を交える余裕も見せるが、戦場では極めて鋭い判断力を発揮する。</p>
             </div>
           </div>
@@ -145,14 +142,14 @@
               <p>王騎軍第4軍軍長。<br>
                 馬陽戦では左軍を担当し、敵主力に突撃した猛将。<br>
                 王騎に「死闘が最も得意」と答えるなど、好戦的な面が見受けられる。<br>
-                信が手柄を挙げた時は、戦場に向けて勝利宣言をし、信の名声を世に知らしめた。
+                信が手柄を挙げた時は戦場に向けて勝利宣言をし、信の名声を世に知らしめた。
               </p>
             </div>
           </div>
 
           <div class="text-img">
             <div class="img">
-              <img src="static/img/qin/Hishin/LiXin.jpg" alt="信">
+              <img id="LiXin" src="static/img/qin/Hishin/LiXin.jpg" alt="信">
             </div>
             <div class="text">
               <h2>信<span class="cast">/山崎賢人</span></h2>
@@ -255,8 +252,9 @@
             </div>
             <div class="text">
               <h2>趙荘<span class="cast">/山本耕史</span></h2>
-              <p>趙国の軍師で、馬陽の戦いでは総大将代理を務めました。<br>
-                彼は周到な軍略を駆使し、秦軍を率いる王騎を執拗に追う役割をになった</p>
+              <p>李牧・龐煖と並び、秦軍を苦しめる趙の主要武将の一人。<br>
+                王騎を追い詰める戦略を立案し、その卓越した知略で秦軍を翻弄する。<br>
+                馬陽の戦いでは趙軍の総大将代理を務め、その手腕をいかんなく発揮した。</p>
             </div>
           </div>
 
@@ -279,7 +277,9 @@
             </div>
             <div class="text">
               <h2>カイネ<span class="cast">/佐久間由衣</span></h2>
-              <p>趙軍のすべてを司る希代の天才軍略家・李牧を支える剣士</p>
+              <p>李牧の側近を務める二刀流の女剣士で、男勝りな性格の女傑。<br>
+                騎馬術や剣術に秀で、李牧の護衛として常にその傍らに控える。<br>
+                単独での隠密行動も多く、軍師である李牧の厳しさや覚悟を誰よりも近くで感じている。</p>
             </div>
           </div>
         </div>

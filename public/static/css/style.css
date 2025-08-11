@@ -59,6 +59,14 @@ header {
 }
 
 .left-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem;
+}
+
+.left-content a {
   height: 100%;
 }
 
@@ -135,7 +143,6 @@ main {
   color: #e3b04b;
   font-size: 1.8rem;
   text-align: center;
-  font-family: "serif";
   letter-spacing: 0.15em;
   margin-bottom: 2rem;
   border-bottom: 2px solid #e3b04b;
@@ -164,7 +171,7 @@ main {
 
 .look-at {
   display: inline-block;
-  padding: 0.6rem;
+  padding: 0.6rem 2.6rem;
   border: 1px solid #e3b04b;
   color: #e3b04b;
   text-decoration: none;
@@ -177,6 +184,24 @@ main {
   color: #1a1a1a;
 }
 
+.introduction {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.introduction img {
+  width: 75%;
+}
+
+.introduction p {
+  font-size: 1.2rem;
+  line-height: 2;
+  letter-spacing: 0.05rem;
+  margin-top: 2rem;
+}
+
 .news-area {
   max-width: 900px;
   margin: 3rem auto;
@@ -185,7 +210,7 @@ main {
 
 .trailer {
   max-width: 900px;
-  margin: 3rem auto;
+  margin: 5rem auto;
   text-align: center;
 }
 
@@ -195,7 +220,8 @@ main {
 }
 
 .trailer p {
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  line-height: 2.5;
 }
 
 .flexbox-sns {
@@ -210,6 +236,60 @@ main {
   text-align: center;
   line-height: 2.5;
   font-size: 1.25rem;
+}
+
+.character-area {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+}
+
+.char-highlight {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.char-card {
+  position: relative;
+  width: calc(100% / 3);
+  overflow: hidden;
+  text-decoration: none;
+  border: 2px solid #333;
+}
+
+.char-card img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.char-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(26, 26, 26, 0.8);
+  /* 黒背景半透明 */
+  padding: 0.5rem;
+}
+
+.char-info h3 {
+  font-size: 1.2rem;
+  color: #e3b04b;
+  margin: 0;
+}
+
+.char-info p {
+  font-size: 0.85rem;
+  margin: 0.3rem 0 0;
+  color: #fcfad9;
+}
+
+/* hoverでズーム感 */
+.char-card:hover img {
+  transform: scale(1.1);
 }
 
 
@@ -249,6 +329,33 @@ main {
   font-size: 2.5rem;
 }
 
+.past-series {
+  width: 900px;
+  margin: 3rem auto;
+}
+
+.series-title {
+  color: #e3b04b;
+  text-align: center;
+}
+
+.series {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.opus {
+  width: calc(100% / 3);
+  gap: 2rem;
+}
+
+.opus img {
+  width: 100%;
+}
+
 .footer-nav {
   width: 900px;
   margin: 3rem auto;
@@ -283,7 +390,6 @@ main {
   padding: 3rem 2rem;
   line-height: 1.9;
   border-radius: 8px;
-  font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
@@ -303,6 +409,7 @@ main {
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   text-align: justify;
+  line-height: 2.5;
 }
 
 .story-section strong {
@@ -339,7 +446,7 @@ main {
 /* === character.html === */
 
 .tabs {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -431,7 +538,6 @@ main {
 
 .text h2 .cast {
   font-size: 1rem;
-  font-weight: 400;
   margin-left: 0.5rem;
 }
 

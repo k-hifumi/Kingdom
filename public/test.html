@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>キングダム｜息が詰まる戦場</title>
+    <style>
+        /* ===== ベース ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            background: #0B0D14;
+            color: #E6EAEE;
+            font-family: "Noto Sans JP", system-ui, sans-serif
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto
+        }
+
+        /* ===== 配色（3色に制限） ===== */
+        :root {
+            --bg: #0B0D14;
+            /* 闇 */
+            --ink: #E6EAEE;
+            /* 乾いた紙色 */
+            --iron: #2B3342;
+            /* 鉄／冷気 */
+            --blood: #8C1F1F;
+            /* 血のアクセント */
+        }
+
+        /* ===== 上部・無音の緊張線（時々だけ脈打つ） ===== */
+        .tightline {
+            position: fixed;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: var(--blood);
+            transform-origin: left center;
+            animation: tight 16s ease-in-out infinite;
+            /* 長い待ち→一瞬だけ収縮 */
+            z-index: 1000;
+        }
+
+        @keyframes tight {
+            0% {
+                transform: scaleX(0.15)
+            }
+
+            72% {
+                transform: scaleX(0.15)
+            }
+
+            73% {
+                transform: scaleX(1)
+            }
+
+            74% {
+                transform: scaleX(0.28)
+            }
+
+            100% {
+                transform: scaleX(0.20)
+            }
+        }
+
+        /* ===== ヒーロー ===== */
+        .hero {
+            min-height: 88svh;
+            display: flex;
+            gap: 24px;
+            align-items: flex-end;
+            border-bottom: 1px solid var(--iron);
+            padding: 24px 16px 32px;
+        }
+
+        /* 左：縦書きで圧をかける（でかいが静的） */
+        .hero-vert {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: -.05em;
+            font-weight: 900;
+            font-size: clamp(28px, 7vw, 72px);
+            line-height: 1;
+            color: var(--ink);
+        }
+
+        /* 右：息が止まる一文＋微かな砂塵 */
+        .hero-copy {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            justify-content: flex-end
+        }
+
+        .lead {
+            font-size: clamp(16px, 2.2vw, 22px);
+            color: #AFC3DE
+        }
+
+        /* 断続ショック（画面全体を1〜2pxだけ揺らす） */
+        .shock {
+            animation: shock 19s ease-in-out infinite;
+            transform-origin: center;
+        }
+
+        @keyframes shock {
+
+            0%,
+            80%,
+            100% {
+                transform: translate(0, 0)
+            }
+
+            81% {
+                transform: translate(1px, 0)
+            }
+
+            82% {
+                transform: translate(-1px, 0)
+            }
+
+            83% {
+                transform: translate(0, 0)
+            }
+        }
+
+        /* 呼吸が詰まる「詰め」：一瞬だけ字間と横幅を圧縮 */
+        .crush {
+            display: inline-block;
+            letter-spacing: .04em;
+            animation: crush 14s ease-in-out infinite;
+        }
+
+        @keyframes crush {
+
+            0%,
+            68% {
+                transform: scaleX(1)
+            }
+
+            70% {
+                transform: scaleX(.86)
+            }
+
+            /* ぎゅっと詰まる */
+            76% {
+                transform: scaleX(1)
+            }
+
+            100% {
+                transform: scaleX(1)
+            }
+        }
+
+        /* 区切りの鉄線（唐突に伸縮） */
+        .bar {
+            height: 2px;
+            background: var(--iron);
+            width: 20%;
+            animation: bar 13s ease-in-out infinite;
+        }
+
+        @keyframes bar {
+
+            0%,
+            60% {
+                width: 20%
+            }
+
+            62% {
+                width: 100%
+            }
+
+            68% {
+                width: 32%
+            }
+
+            100% {
+                width: 24%
+            }
+        }
+
+        /* ===== スティッキーの“圧”セクション ===== */
+        .block {
+            border-bottom: 1px solid var(--iron);
+            padding: 40px 16px
+        }
+
+        .stick {
+            position: sticky;
+            top: 52px;
+            /* 上の緊張線を避ける */
+            display: flex;
+            gap: 24px;
+            align-items: flex-start
+        }
+
+        .stamp {
+            min-width: 96px;
+            min-height: 96px;
+            border: 2px solid var(--blood);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 28px;
+            color: var(--blood)
+        }
+
+        .text h2 {
+            font-size: clamp(18px, 2.4vw, 24px);
+            letter-spacing: .02em
+        }
+
+        .text p {
+            margin-top: 10px;
+            color: #C3D0E6
+        }
+
+        /* ===== 小要素：切り傷ライン（複数divで代用） ===== */
+        .cuts {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px
+        }
+
+        .cut {
+            height: 1px;
+            background: var(--blood);
+            flex: 1
+        }
+
+        .cut:nth-child(2) {
+            flex: 2
+        }
+
+        /* 擬似クラス禁止なので子要素は素直に並べ替えてもOK */
+
+        /* ===== フッタ ===== */
+        footer {
+            padding: 24px 16px;
+            color: #95A4BE
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 無音の緊張線 -->
+    <div class="tightline"></div>
+
+    <main class="shock">
+        <section class="hero">
+            <div class="hero-vert">戦<br>場<br>は<br>黙<br>る</div>
+            <div class="hero-copy">
+                <div class="bar"></div>
+                <h1 class="crush">馬陽原、砂塵が喉の奥で止まる。</h1>
+                <p class="lead">鬨の声は遠のき、鉄の匂いだけが濃くなる。踏み出した一歩に、戻り道はない。</p>
+            </div>
+        </section>
+
+        <!-- スティッキーで圧をかけ続けるセクション（JSなしで“張り付きの緊張”を演出） -->
+        <section class="block">
+            <div class="stick">
+                <div class="stamp">一撃</div>
+                <div class="text">
+                    <h2 class="crush">槍先が空気を裂く音は、誰より自分の耳に痛い。</h2>
+                    <div class="cuts">
+                        <div class="cut"></div>
+                        <div class="cut"></div>
+                        <div class="cut"></div>
+                    </div>
+                    <p>足裏は乾いた土を噛み、肺は火を吸う。前へ、ただ前へ。視界の端で、仲間の影が倒れる。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="stick">
+                <div class="stamp">間</div>
+                <div class="text">
+                    <h2 class="crush">静けさは、矢の到達時間と同じ長さだけ続く。</h2>
+                    <div class="cuts">
+                        <div class="cut"></div>
+                        <div class="cut"></div>
+                    </div>
+                    <p>声を出せば場所が割れる。呼吸も、動機も、音になる。牙を隠せ。眼だけを、研げ。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="block">
+            <div class="stick">
+                <div class="stamp">決</div>
+                <div class="text">
+                    <h2 class="crush">膝が笑う。心は笑わない。</h2>
+                    <div class="cuts">
+                        <div class="cut"></div>
+                        <div class="cut"></div>
+                        <div class="cut"></div>
+                        <div class="cut"></div>
+                    </div>
+                    <p>刃の冷たさが手の内に馴染む。振り下ろす軌道だけが、まだ未来だ。</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>© KINGDOM / 大将軍の帰還（課題デモ）</footer>
+    </main>
+</body>
+
+</html>
